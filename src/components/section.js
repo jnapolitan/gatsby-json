@@ -1,7 +1,11 @@
 import React from 'react';
 
 export default props => {
+  const { section } = props;
   return (
-    <p>{props.section.name}</p>
+    <>
+      <p>{section.name}</p>
+      <img src={section.image} alt={`${section.name}`} />
+    </>
   )
 }

@@ -1,16 +1,19 @@
 import React from 'react';
+
+import ProgramHeader from './program-header';
 import Section from './section';
 
 export default props => {
   const { program } = props;
-  const sections = program.sections.map((section, i) => (
-    <Section section={section} id={i} />
-  ))
+  const sections = program.sections
+    .sort((a, b) => a.order - b.order)
+    .map((section, i) => (
+      <Section section={section} key={`section-${i}`} />
+    ));
 
   return (
     <>
-      <h3>{program.name}</h3>
-      <p>{program.description}</p>
+      <ProgramHeader program={program} />
       { sections }
     </>
   )

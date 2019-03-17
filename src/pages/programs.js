@@ -8,8 +8,8 @@ import SEO from "../components/seo";
 const ProgramsPage = ({ data }) => {
   const programData = Object.values(data.programsJson);
   const programs = programData.map((program, i) => (
-    <Program program={program} key={i} />
-  ))
+    <Program program={program} key={`program-${i}`} />
+  ));
 
   return (
     <Layout>
