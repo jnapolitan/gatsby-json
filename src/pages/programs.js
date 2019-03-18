@@ -14,7 +14,7 @@ const ProgramsPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Page two" />
-      <h1>Hi from the programs page</h1>
+      <h1>Program Overview</h1>
       { programs }
       <Link to="/">Go back to the homepage</Link>
     </Layout>
@@ -28,6 +28,7 @@ export const query = graphql`
   allProgramsJson {
     edges {
       node {
+        id
         name
         description
         sections {

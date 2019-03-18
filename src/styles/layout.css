@@ -60,10 +60,6 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 mark {
   background-color: #ff0;
   color: #000;
@@ -221,6 +217,7 @@ img {
   margin-bottom: 1.45rem;
 }
 h1 {
+  color: #1B4B81;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -229,7 +226,6 @@ h1 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -238,6 +234,7 @@ h1 {
   line-height: 1.1;
 }
 h2 {
+  color: #1B4B81;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -246,7 +243,6 @@ h2 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -255,6 +251,7 @@ h2 {
   line-height: 1.1;
 }
 h3 {
+  color: #1B4B81;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -263,7 +260,6 @@ h3 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -272,6 +268,7 @@ h3 {
   line-height: 1.1;
 }
 h4 {
+  color: #1B4B81;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -280,7 +277,6 @@ h4 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -289,6 +285,7 @@ h4 {
   line-height: 1.1;
 }
 h5 {
+  color: #1B4B81;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -297,7 +294,6 @@ h5 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -306,6 +302,7 @@ h5 {
   line-height: 1.1;
 }
 h6 {
+  color: #1B4B81;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -314,7 +311,6 @@ h6 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;

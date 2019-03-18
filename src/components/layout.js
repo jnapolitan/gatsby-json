@@ -35,11 +35,6 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}
-            {' '}
-            <a href="https://www.joinmodernhealth.com">Modern Health</a>
-          </footer>
         </div>
       </>
     )}
