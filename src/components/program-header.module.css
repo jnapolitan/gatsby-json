@@ -1,4 +1,30 @@
 .container {
   display: flex;
   justify-content: space-between;
+  align-content: center;
+  margin: 15px 0;
+}
+
+h3 {
+  color: #1B4B81;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background: none;
+  text-align: left;
+  color: gray;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+button:active {
+  color: #1B4B81;
+}
+
+button:focus {
+  outline: none;
 }
