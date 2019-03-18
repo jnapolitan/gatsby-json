@@ -6,8 +6,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const ProgramsPage = ({ data }) => {
-  const programData = Object.values(data.programsJson);
-  const programs = programData.map((program, i) => (
+
+  const programs = data.allProgramsJson.edges.map((program, i) => (
     <Program program={program} key={`program-${i}`} />
   ));
 
@@ -25,23 +25,16 @@ export default ProgramsPage;
 
 export const query = graphql`
 {
-  programsJson {
-    _1 {
-      name
-      description
-      sections {
-        order
+  allProgramsJson {
+    edges {
+      node {
         name
-        image
-      }
-    }
-    _2 {
-      name
-      description
-      sections {
-        order
-        name
-        image
+        description
+        sections {
+          order
+          name
+          image
+        }
       }
     }
   }

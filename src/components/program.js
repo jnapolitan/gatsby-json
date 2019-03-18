@@ -4,7 +4,7 @@ import ProgramHeader from './program-header';
 import Section from './section';
 
 export default props => {
-  const { program } = props;
+  const program = props.program.node;
   const sections = program.sections
     .sort((a, b) => a.order - b.order)
     .map((section, i) => (
