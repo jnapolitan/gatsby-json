@@ -2,18 +2,6 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import programHeaderStyles from './program-header.module.css';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '30%'
-  }
-};
-
 export default class ProgramHeader extends Component {
   constructor() {
     super();
@@ -39,20 +27,19 @@ export default class ProgramHeader extends Component {
   }
 
   render() {
-    const { program } = this.props;
+    const { name, description } = this.props;
 
     return (
       <div className={programHeaderStyles.container}>
-        <h3>{program.name}</h3>
+        <h3>{name}</h3>
         <button onClick={this.openModal}>Learn more</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
-          style={customStyles}
           contentLabel="More about this program"
         >
-          <h2 ref={subtitle => this.subtitle = subtitle}>More about this program</h2>
-          <p>{program.description}</p>
+          <h2>{name}</h2>
+          <p>{description}</p>
           <button onClick={this.closeModal}>Close</button>
         </Modal>
       </div>
