@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require('path');
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNode, createNodeField } = actions;
@@ -28,11 +28,39 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 
   if (node.internal.type === 'Section') {
-    const slug = `${node.programId}/${node.order + 1}`;
+    const slug = `programs/${node.programId}/${node.order + 1}`;
     createNodeField({
       node,
       name: `slug`,
       value: slug,
     });
   }
+};
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+  return graphql(`
+    {
+      allSection {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `
+).then(result => {
+    result.data.allSection.edges.forEach(({ node }) => {
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve(`./src/templates/section.js`),
+        context: {
+          slug: node.fields.slug,
+        },
+      });
+    });
+  });
 };
