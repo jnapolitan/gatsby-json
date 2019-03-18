@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
-import programHeaderStyles from './program-header.module.css';
+import programHeaderStyles from '../styles/program-header.module.css';
 
 export default class ProgramHeader extends Component {
   constructor() {

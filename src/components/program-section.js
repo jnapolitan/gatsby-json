@@ -1,6 +1,6 @@
 import React from 'react';
 import { toWords } from 'number-to-words';
-import sectionStyles from './section.module.css';
+import programSectionStyles from '../styles/program-section.module.css';
 
 export default props => {
   const { section } = props;
@@ -8,7 +8,7 @@ export default props => {
   const partText = partNumber.charAt(0).toUpperCase() + partNumber.slice(1);
 
   return (
-    <div className={sectionStyles.container}>
+    <div className={programSectionStyles.container}>
       <img src={section.image} alt={`${section.name}`} />
       <div>
         <p>Part {partText}</p>

@@ -1,15 +1,15 @@
 import React from 'react';
 
-import programStyles from './program.module.css';
+import programStyles from '../styles/program.module.css';
 import ProgramHeader from './program-header';
-import Section from './section';
+import ProgramSection from './program-section';
 
 export default props => {
   const program = props.program.node;
   const sections = program.sections
     .sort((a, b) => a.order - b.order)
     .map((section, i) => (
-      <Section section={section} key={`section-${i}`} />
+      <ProgramSection section={section} key={`section-${i}`} />
     ));
 
   const { name, description } = program;
