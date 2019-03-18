@@ -7,9 +7,8 @@ import ProgramSection from './program-section';
 export default props => {
   const program = props.program.node;
   const sections = program.sections
-    .sort((a, b) => a.order - b.order)
-    .map((section, i) => (
-      <ProgramSection section={section} key={`section-${i}`} />
+    .map((section, idx) => (
+      <ProgramSection section={section} key={`section-${idx}`} />
     ));
 
   const { name, description } = program;

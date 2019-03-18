@@ -3,32 +3,42 @@ const path = require('path');
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNode, createNodeField } = actions;
+
   if (node.internal.type === `ProgramsJson`) {
-    node.sections.forEach((section, idx) => {
-      createNode({
-        id: `${node.id}-${idx}`,
-        programId: `${node.id}`,
-        name: section.name,
-        description: section.description,
-        image: section.image,
-        order: section.order,
-        activities: section.activities,
-        parent: `${node.id}`,
-        children: [],
-        internal: {
-          type: `Section`,
-          contentDigest: crypto
-            .createHash(`md5`)
-            .update(JSON.stringify(section))
-            .digest(`hex`),
-          mediaType: `text/markdown`,
-        }
-      });
+    const endOrder = node.sections.length;
+
+    node.sections
+      .sort((a, b) => a.order - b.order)
+      .forEach((section, idx) => {
+        section.order = idx + 1;
+        section.programId = `${node.id}`;
+        section.endOrder = endOrder;
+        createNode({
+          id: `${node.id}-${idx}`,
+          programId: section.programId,
+          name: section.name,
+          description: section.description,
+          image: section.image,
+          order: section.order,
+          endOrder: section.endOrder,
+          activities: section.activities,
+          parent: null,
+          children: [],
+          internal: {
+            type: `Section`,
+            contentDigest: crypto
+              .createHash(`md5`)
+              .update(JSON.stringify(section))
+              .digest(`hex`),
+            mediaType: `text/markdown`,
+          }
+        });
     });
   }
 
   if (node.internal.type === 'Section') {
-    const slug = `programs/${node.programId}/${node.order + 1}`;
+    const { programId, order } = node;
+    const slug = `programs/${programId}/${order}`;
     createNodeField({
       node,
       name: `slug`,

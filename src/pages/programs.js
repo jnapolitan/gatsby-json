@@ -1,14 +1,12 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Program from '../components/program';
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const ProgramsPage = ({ data }) => {
-
-  const programs = data.allProgramsJson.edges.map((program, i) => (
-    <Program program={program} key={`program-${i}`} />
+  const programs = data.allProgramsJson.edges.map((program, idx) => (
+    <Program program={program} key={`program-${idx}`} />
   ));
 
   return (
@@ -32,6 +30,7 @@ export const query = graphql`
         name
         description
         sections {
+          programId
           order
           name
           image

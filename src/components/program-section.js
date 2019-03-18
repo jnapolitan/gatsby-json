@@ -1,19 +1,25 @@
 import React from 'react';
 import { toWords } from 'number-to-words';
+import { Link } from 'gatsby';
 import programSectionStyles from '../styles/program-section.module.css';
 
 export default props => {
   const { section } = props;
-  const partNumber = toWords(section.order + 1);
-  const partText = partNumber.charAt(0).toUpperCase() + partNumber.slice(1);
+  const orderString = uppercase(toWords(section.order));
 
   return (
-    <div className={programSectionStyles.container}>
-      <img src={section.image} alt={`${section.name}`} />
-      <div>
-        <p>Part {partText}</p>
-        <h4>{section.name}</h4>
+    <Link to={`/programs/${section.programId}/${section.order}`}>
+      <div className={programSectionStyles.container}>
+        <img src={section.image} alt={`${section.name}`} />
+        <div>
+          <p>Part {orderString}</p>
+          <h4>{section.name}</h4>
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
+
+const uppercase = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
