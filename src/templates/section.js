@@ -11,7 +11,6 @@ export default ({ data }) => {
   const section = data.section;
   const orderString = capitalize(toWords(section.order));
   const activities = section.activities.map((activity, idx) => {
-    console.log(activity);
     if (activity.type === "Text") {
       return <TextActivity activity={activity} key={`activity-${idx}`} />
     } else if (activity.type === "Question") {
@@ -28,6 +27,7 @@ export default ({ data }) => {
         <p>{section.description}</p>
         <img src={section.image} alt={section.name} />
       </div>
+      <h4>This section's activities:</h4>
       <div className={sectionStyles.activities}>
         { activities }
       </div>
