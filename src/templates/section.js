@@ -3,11 +3,21 @@ import { graphql, Link } from "gatsby";
 import { toWords } from "number-to-words";
 import capitalize from "capitalize";
 import Layout from "../components/layout";
-import sectionStyles from '../styles/section.module.css';
+import TextActivity from '../components/textActivity';
+import QuestionActivity from '../components/questionActivity';
+import sectionStyles from "../styles/section.module.css";
 
 export default ({ data }) => {
   const section = data.section;
   const orderString = capitalize(toWords(section.order));
+  const activities = section.activities.map((activity, idx) => {
+    console.log(activity);
+    if (activity.type === "Text") {
+      return <TextActivity activity={activity} key={`activity-${idx}`} />
+    } else if (activity.type === "Question") {
+      return <QuestionActivity activity={activity} key={`activity-${idx}`} />
+    }
+  });
 
   return (
     <Layout>
@@ -17,6 +27,9 @@ export default ({ data }) => {
       <div className={sectionStyles.content}>
         <p>{section.description}</p>
         <img src={section.image} alt={section.name} />
+      </div>
+      <div className={sectionStyles.activities}>
+        { activities }
       </div>
       <div className={sectionStyles.buttons}>
         {createBackLink(section)}

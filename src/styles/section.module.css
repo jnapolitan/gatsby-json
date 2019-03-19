@@ -5,7 +5,7 @@
 }
 
 .content {
-  padding: 25px 0;
+  margin: 25px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,4 +43,8 @@
 .buttons a.continue {
   color: white;
   background-color: #008490;
+}
+
+.activities {
+  margin: 25px 0;
 }
