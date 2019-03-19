@@ -1,0 +1,46 @@
+.name {
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 5px solid lightgray;
+}
+
+.content {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 400px;
+}
+
+.content p {
+  width: 50%;
+}
+
+.content img {
+  width: 300px;
+  height: auto;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons a {
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 15px;
+  min-width: 200px;
+  border-radius: 5px;
+}
+
+.buttons a.back {
+  color: #8198B1;
+  border: 1px solid lightgray;
+}
+
+.buttons a.continue {
+  color: white;
+  background-color: #008490;
+}

@@ -1,11 +1,12 @@
 import React from 'react';
 import { toWords } from 'number-to-words';
+import capitalize from 'capitalize';
 import { Link } from 'gatsby';
 import programSectionStyles from '../styles/program-section.module.css';
 
 export default props => {
   const { section } = props;
-  const orderString = uppercase(toWords(section.order));
+  const orderString = capitalize(toWords(section.order));
 
   return (
     <Link to={`/programs/${section.programId}/${section.order}`}>
@@ -19,7 +20,3 @@ export default props => {
     </Link>
   )
 }
-
-const uppercase = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-};

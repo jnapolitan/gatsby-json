@@ -1,16 +1,13 @@
 import React from 'react';
-
-import programStyles from '../styles/program.module.css';
 import ProgramHeader from './program-header';
 import ProgramSection from './program-section';
+import programStyles from '../styles/program.module.css';
 
 export default props => {
   const program = props.program.node;
-  const sections = program.sections
-    .map((section, idx) => (
-      <ProgramSection section={section} key={`section-${idx}`} />
-    ));
-
+  const sections = program.sections.map((section, idx) => (
+    <ProgramSection section={section} key={`section-${idx}`} />
+  ));
   const { name, description } = program;
 
   return (
