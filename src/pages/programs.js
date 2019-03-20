@@ -34,6 +34,9 @@ export const query = graphql`
           order
           name
           image
+          activities {
+            type
+          }
         }
       }
     }
