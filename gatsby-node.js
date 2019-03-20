@@ -22,7 +22,7 @@ exports.onCreateNode = ({ node, actions }) => {
           order: section.order,
           endOrder: section.endOrder,
           activities: section.activities,
-          parent: null,
+          parent: `${node.id}`,
           children: [],
           internal: {
             type: `Section`,
