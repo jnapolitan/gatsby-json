@@ -14,10 +14,10 @@ export default class TextActivity extends Component {
   handleClick() {
     const localStorageVal = this.getLocalStorageVal();
     
-    if (localStorageVal === 'unread' || localStorageVal === null) {
+    if (!localStorageVal) {
       localStorage.setItem(this.localStorageKey, 'read');
     } else {
-      localStorage.setItem(this.localStorageKey, 'unread');
+      localStorage.removeItem(this.localStorageKey);
     }
 
     this.forceUpdate();
@@ -30,7 +30,7 @@ export default class TextActivity extends Component {
   render() {
     const { activity } = this.props;
     const localStorageVal = this.getLocalStorageVal();
-    const completedClass = localStorageVal === 'read' ? `${textActivityStyles.completed}` : "";
+    const completedClass = localStorageVal ? `${textActivityStyles.read}` : "";
 
     return (
       <div>

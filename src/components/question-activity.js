@@ -24,11 +24,11 @@ export default class QuestoinActivity extends Component {
       <li key={`option-${idx}`}>
         <input 
           type='radio' 
-          value={`${idx}`} 
+          value={`${option}`} 
           name='radio'  
           id={`radio${idx}`}
           onClick={this.handleClick}
-          defaultChecked={localStorageVal === idx.toString()}
+          defaultChecked={localStorageVal === option}
           />
         <label 
           className={questionActivityStyles.option} 
