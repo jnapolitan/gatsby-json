@@ -5,10 +5,6 @@ export default class TextActivity extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      completed: false
-    };
-
     const { programId, sectionId, activityId } = this.props;
     this.localStorageKey = `${programId}${sectionId}${activityId}`;
 
@@ -16,8 +12,7 @@ export default class TextActivity extends Component {
   }
 
   handleClick() {
-    const localStorageVal = localStorage.getItem(this.localStorageKey);
-    const { completed } = this.state;
+    const localStorageVal = this.getLocalStorageVal();
     
     if (localStorageVal === 'false' || localStorageVal === null) {
       localStorage.setItem(this.localStorageKey, 'true');
@@ -25,12 +20,16 @@ export default class TextActivity extends Component {
       localStorage.setItem(this.localStorageKey, 'false');
     }
 
-    this.setState({ completed: !completed });
+    this.forceUpdate();
+  }
+
+  getLocalStorageVal() {
+    return localStorage.getItem(this.localStorageKey);
   }
 
   render() {
     const { activity } = this.props;
-    const localStorageVal = localStorage.getItem(this.localStorageKey);
+    const localStorageVal = this.getLocalStorageVal();
     const completedClass = localStorageVal === 'true' ? `${textActivityStyles.completed}` : "";
 
     return (
