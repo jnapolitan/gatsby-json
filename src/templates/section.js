@@ -3,8 +3,8 @@ import { graphql, Link } from "gatsby";
 import { toWords } from "number-to-words";
 import capitalize from "capitalize";
 import Layout from "../components/layout";
-import TextActivity from '../components/textActivity';
-import QuestionActivity from '../components/questionActivity';
+import TextActivity from "../components/text-activity";
+import QuestionActivity from "../components/question-activity";
 import sectionStyles from "../styles/section.module.css";
 
 export default ({ data }) => {
@@ -12,9 +12,21 @@ export default ({ data }) => {
   const orderString = capitalize(toWords(section.order));
   const activities = section.activities.map((activity, idx) => {
     if (activity.type === "Text") {
-      return <TextActivity activity={activity} key={`activity-${idx}`} />
+      return <TextActivity 
+        activity={activity}
+        programId={section.programId}
+        sectionId={section.order}
+        activityId={idx + 1} 
+        key={`activity-${idx}`} 
+      />
     } else if (activity.type === "Question") {
-      return <QuestionActivity activity={activity} key={`activity-${idx}`} />
+      return <QuestionActivity 
+        activity={activity}
+        programId={section.programId}
+        sectionId={section.order}
+        activityId={idx + 1} 
+        key={`activity-${idx}`}
+      />
     }
   });
 

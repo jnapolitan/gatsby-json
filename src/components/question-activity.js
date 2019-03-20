@@ -1,5 +1,5 @@
 import React from 'react';
-import questionActivityStyles from "../styles/questionActivity.module.css";
+import questionActivityStyles from "../styles/question-activity.module.css";
 
 export default props => {
   const { activity } = props;

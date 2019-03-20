@@ -1,0 +1,22 @@
+.content {
+  margin: 25px 0;
+}
+
+.activity-button {
+  padding: 10px 15px;
+  background-color: #DAF1F6;
+  color: #43BCD8;
+  border-radius: 25px;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+}
+
+.activity-button:hover {
+  background-color: #43BCD8;
+  color: white;
+}
+
+.completed {
+  background-color: #43BCD8;
+  color: white;
+}
