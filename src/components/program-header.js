@@ -37,10 +37,17 @@ export default class ProgramHeader extends Component {
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           contentLabel="More about this program"
+          className={programHeaderStyles.modal}
         >
-          <h2>{name}</h2>
+          <div className={programHeaderStyles.modalHeader}>
+            <h2>{name}</h2>
+            <span 
+              className={programHeaderStyles.closeModal} 
+              onClick={this.closeModal}
+              >x
+            </span>
+          </div>
           <p>{description}</p>
-          <button onClick={this.closeModal}>Close</button>
         </Modal>
       </div>
     )
