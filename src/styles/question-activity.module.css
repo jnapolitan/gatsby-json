@@ -2,11 +2,35 @@
   margin: 25px 0;
 }
 
+input {
+  display: none;
+}
+
+input:checked + label {
+  background-color: #43BCD8;
+  color: white;
+}
+
+li {
+  display: inline-block;
+}
+
+.options {
+  list-style: none;
+  margin-left: 0;
+}
+
 .option {
+  cursor: pointer;
   display: inline-block;
   padding: 10px 15px;
   background-color: #DAF1F6;
   color: #43BCD8;
   border-radius: 25px;
   margin: 0 10px 10px 0;
+}
+
+.option:hover {
+  background-color: #43BCD8;
+  color: white;
 }
