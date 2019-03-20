@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { toWords } from 'number-to-words';
 import capitalize from 'capitalize';
-import { FaCheck, FaCheckSquare } from "react-icons/fa";
+import { FaCheckSquare } from "react-icons/fa";
 import { Link } from 'gatsby';
 import programSectionStyles from '../styles/program-section.module.css';
 
