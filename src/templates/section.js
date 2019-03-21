@@ -10,28 +10,32 @@ export default class Section extends Component {
   
   renderBackLink() {
     const { programName, order } = this.props.data.section;
-    let link;
+    let link, buttonText;
 
     if (order - 1 === 0) {
       link = "/programs";
+      buttonText = "Back to programs";
     } else {
       link = `/programs/${programName}/part-${order - 1}`;
+      buttonText = "Back";
     }
 
-    return <Link className={sectionStyles.back} to={link}>Back</Link>
+    return <Link className={sectionStyles.back} to={link}>{buttonText}</Link>
   }
 
   renderContinueLink() {
     const { programName, order, endOrder } = this.props.data.section;
-    let link;
+    let link, buttonText;
 
     if (order === endOrder) {
       link = "/programs";
+      buttonText = "Finish";
     } else {
       link = `/programs/${programName}/part-${order + 1}`
+      buttonText = "Continue";
     }
 
-    return <Link className={sectionStyles.continue} to={link}>Continue</Link>
+    return <Link className={sectionStyles.continue} to={link}>{buttonText}</Link>
   }
 
   render() {
