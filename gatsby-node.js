@@ -37,7 +37,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
   if (node.internal.type === "Section") {
     const { programName, order } = node;
-    const slug = `programs/${programName}/part-${order}`;
+    const slug = `${programName}/part-${order}`;
     createNodeField({
       node,
       name: `slug`,

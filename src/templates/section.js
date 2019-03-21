@@ -13,10 +13,10 @@ export default class Section extends Component {
     let link, buttonText;
 
     if (order - 1 === 0) {
-      link = "/programs";
+      link = "/";
       buttonText = "Back to programs";
     } else {
-      link = `/programs/${programName}/part-${order - 1}`;
+      link = `/${programName}/part-${order - 1}`;
       buttonText = "Back";
     }
 
@@ -28,10 +28,10 @@ export default class Section extends Component {
     let link, buttonText;
 
     if (order === endOrder) {
-      link = "/programs";
+      link = "/";
       buttonText = "Finish";
     } else {
-      link = `/programs/${programName}/part-${order + 1}`
+      link = `/${programName}/part-${order + 1}`
       buttonText = "Continue";
     }
 

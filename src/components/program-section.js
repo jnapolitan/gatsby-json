@@ -30,7 +30,7 @@ export default class ProgramSection extends Component {
     const orderString = capitalize(toWords(order));
 
     return (
-      <Link to={`/programs/${programName}/part-${order}`}>
+      <Link to={`/${programName}/part-${order}`}>
         <div className={programSectionStyles.container}>
           {this.markComplete()}
           <img src={image} alt={`${name}`} />
