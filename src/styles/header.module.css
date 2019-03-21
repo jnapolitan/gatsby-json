@@ -1,0 +1,19 @@
+header {
+  margin-bottom: 1.45rem;
+}
+
+.container {
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+  margin: 0 auto;
+}
+
+.container a {
+  text-align: left;
+}
+
+.header-image {
+  display: block;
+  height: 100%;
+  margin: 0;
+}

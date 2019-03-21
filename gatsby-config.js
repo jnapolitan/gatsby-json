@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Modern Health`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `An overview of programs available to you through Modern Health.`,
+    author: `Modern Health`,
   },
+  pathPrefix: '/programs',
   plugins: [
     `gatsby-transformer-json`,
     {
@@ -32,7 +33,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/modern-health-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

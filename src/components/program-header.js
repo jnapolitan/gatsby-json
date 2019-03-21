@@ -3,8 +3,8 @@ import Modal from 'react-modal';
 import programHeaderStyles from '../styles/program-header.module.css';
 
 export default class ProgramHeader extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = { 
       modalIsOpen: false 
@@ -32,7 +32,11 @@ export default class ProgramHeader extends Component {
     return (
       <div className={programHeaderStyles.container}>
         <h3>{name}</h3>
-        <button onClick={this.openModal}>Learn more</button>
+        <button 
+          className={programHeaderStyles.modalButton}
+          onClick={this.openModal}
+          >Learn more
+        </button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}

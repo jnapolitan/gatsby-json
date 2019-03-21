@@ -14,7 +14,6 @@ export default class ProgramSection extends Component {
     this.programId = this.section.programId;
     this.programName = this.section.programName;
     this.numActivities = this.section.activities.length;
-    console.log(props);
   }
 
   allActivitiesComplete() {

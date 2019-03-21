@@ -3,16 +3,18 @@
 }
 
 .activity-button {
-  padding: 10px 15px;
+  padding: 10px 35px;
   background-color: #DAF1F6;
   color: #43BCD8;
   border-radius: 25px;
   margin: 0 10px 10px 0;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
 .activity-button:hover {
-  background-color: #43BCD8;
+  background-color: #35AEC8;
   color: white;
 }
 
