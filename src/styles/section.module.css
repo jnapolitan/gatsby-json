@@ -1,3 +1,7 @@
+.container {
+  margin-bottom: 150px;
+}
+
 .name {
   text-align: center;
   padding-bottom: 25px;
@@ -24,7 +28,14 @@
 
 .buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  border-top: 1px solid lightgray;
+  padding: 15px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
 }
 
 .buttons a {

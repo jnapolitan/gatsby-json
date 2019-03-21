@@ -21,49 +21,49 @@ export default class Section extends Component {
   }
 
   createBackLink() {
-    if (this.order - 1 === 0) {
-      return <Link 
-        className={sectionStyles.back} 
-        to="/programs"
-        >Back to programs
-      </Link>
+    const { programName, order } = this.section;
+    let link;
+
+    if (order - 1 === 0) {
+      link = "/programs";
     } else {
-      return <Link 
-        className={sectionStyles.back} 
-        to={`/programs/${this.programName}/part-${this.order - 1}`}
-        >Back
-      </Link>
+      link = `/programs/${programName}/part-${order - 1}`;
     }
+
+    return <Link className={sectionStyles.back} to={link}>Back</Link>
   }
 
-  createContinueLink() {    
-    if (this.order === this.endOrder) {
-      return <Link className={sectionStyles.continue} to="/programs">Finish</Link>
+  createContinueLink() {
+    const { programName, order, endOrder } = this.section;
+    let link;
+
+    if (order === endOrder) {
+      link = "/programs";
     } else {
-      return <Link 
-        className={sectionStyles.continue} 
-        to={`/programs/${this.programName}/part-${this.order + 1}`}
-        >Continue
-      </Link>
+      link = `/programs/${programName}/part-${order + 1}`
     }
+
+    return <Link className={sectionStyles.continue} to={link}>Continue</Link>
   }
 
   render() {
-    const orderString = capitalize(toWords(this.order));
-    const activities = this.activities.map((activity, idx) => {
+    const { order, programId } = this.section;
+    const orderString = capitalize(toWords(order));
+
+    const activities = this.section.activities.map((activity, idx) => {
       if (activity.type === "Text") {
         return <TextActivity 
           activity={activity}
-          programId={this.programId}
-          sectionId={this.order}
+          programId={programId}
+          sectionId={order}
           activityId={idx + 1} 
           key={`activity-${idx}`} 
         />
       } else if (activity.type === "Question") {
         return <QuestionActivity 
           activity={activity}
-          programId={this.programId}
-          sectionId={this.order}
+          programId={programId}
+          sectionId={order}
           activityId={idx + 1} 
           key={`activity-${idx}`}
         />
@@ -72,21 +72,22 @@ export default class Section extends Component {
 
     return (
       <Layout>
-        <h3 className={sectionStyles.name}>
-          {`Part ${orderString}: ${this.section.name}`}
-        </h3>
-        
-        <div className={sectionStyles.content}>
-          <p>{this.section.description}</p>
-          <img src={this.section.image} alt={this.section.name} />
-        </div>
-        <h4>This section's activities:</h4>
-        <div className={sectionStyles.activities}>
-          { activities }
-        </div>
-        <div className={sectionStyles.buttons}>
-          {this.createBackLink()}
-          {this.createContinueLink()}
+        <div className={sectionStyles.container}>
+          <h3 className={sectionStyles.name}>
+            {`Part ${orderString}: ${this.section.name}`}
+          </h3>
+          <div className={sectionStyles.content}>
+            <p>{this.section.description}</p>
+            <img src={this.section.image} alt={this.section.name} />
+          </div>
+          <h4>This section's activities:</h4>
+          <div className={sectionStyles.activities}>
+            { activities }
+          </div>
+          <div className={sectionStyles.buttons}>
+            {this.createBackLink()}
+            {this.createContinueLink()}
+          </div>
         </div>
       </Layout>
     )
