@@ -1,50 +1,53 @@
-import React, { Component } from "react";
+import React from "react";
 import TextActivity from "../components/text-activity";
 import QuestionActivity from "../components/question-activity";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-export default class SectionActivities extends Component {
+export default props => {
+  const { programId, activities, order } = props;
+  const textActivities = [];
+  const questionActivities = [];
+  const emptyText = <p>Nothing here for this section :)</p>
 
-  render() {
-    const { programId, activities, order } = this.props;
-    const textActivities = [];
-    const questionActivities = [];
+  activities.forEach((activity, idx) => {
+    if (activity.type === "Text") {
+      const textActivity = <TextActivity 
+        activity={activity}
+        programId={programId}
+        sectionId={order}
+        activityId={idx + 1} 
+        key={`activity-${idx}`} 
+      />
 
-    activities.forEach((activity, idx) => {
-      if (activity.type === "Text") {
-        const textActivity = <TextActivity 
-          activity={activity}
-          programId={programId}
-          sectionId={order}
-          activityId={idx + 1} 
-          key={`activity-${idx}`} 
-        />
+      textActivities.push(textActivity); 
 
-        textActivities.push(textActivity); 
-      } else if (activity.type === "Question") {
-        const questionActivity = <QuestionActivity 
-          activity={activity}
-          programId={programId}
-          sectionId={order}
-          activityId={idx + 1} 
-          key={`activity-${idx}`}
-        />
+    } else if (activity.type === "Question") {
+      const questionActivity = <QuestionActivity 
+        activity={activity}
+        programId={programId}
+        sectionId={order}
+        activityId={idx + 1} 
+        key={`activity-${idx}`}
+      />
 
-        questionActivities.push(questionActivity);
-      }
-    });
+      questionActivities.push(questionActivity);
+    }
+  });
+  
+  return (
+    <Tabs>
+      <TabList>
+        <Tab><h5>Readings</h5></Tab>
+        <Tab><h5>Questions</h5></Tab>
+      </TabList>
 
-    return (
-      <Tabs>
-        <TabList>
-          <Tab><h5>Readings</h5></Tab>
-          <Tab><h5>Questions</h5></Tab>
-        </TabList>
-
-        <TabPanel>{textActivities}</TabPanel>
-        <TabPanel>{questionActivities}</TabPanel>
-      </Tabs>
-    )
-  }
+      <TabPanel>
+        {textActivities.length ? textActivities : emptyText}
+      </TabPanel>
+      <TabPanel>
+        {questionActivities.length ? questionActivities : emptyText}
+      </TabPanel>
+    </Tabs>
+  )
 }
