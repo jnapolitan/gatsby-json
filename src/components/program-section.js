@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { toWords } from 'number-to-words';
-import capitalize from 'capitalize';
+import React, { Component } from "react";
+import { toWords } from "number-to-words";
+import capitalize from "capitalize";
 import { FaCheckSquare } from "react-icons/fa";
-import { Link } from 'gatsby';
-import programSectionStyles from '../styles/program-section.module.css';
+import { Link } from "gatsby";
+import programSectionStyles from "../styles/program-section.module.css";
 
 export default class ProgramSection extends Component {
 

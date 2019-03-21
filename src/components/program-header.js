@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Modal from 'react-modal';
-import programHeaderStyles from '../styles/program-header.module.css';
+import React, { Component } from "react";
+import Modal from "react-modal";
+import programHeaderStyles from "../styles/program-header.module.css";
 
 export default class ProgramHeader extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class ProgramHeader extends Component {
   }
 
   componentDidMount() {
-    Modal.setAppElement('body');
+    Modal.setAppElement("body");
   }
 
   openModal() {

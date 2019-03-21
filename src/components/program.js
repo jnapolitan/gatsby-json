@@ -1,7 +1,7 @@
-import React from 'react';
-import ProgramHeader from './program-header';
-import ProgramSection from './program-section';
-import programStyles from '../styles/program.module.css';
+import React from "react";
+import ProgramHeader from "./program-header";
+import ProgramSection from "./program-section";
+import programStyles from "../styles/program.module.css";
 
 export default props => {
   const { name, description, sections } = props.program.node;

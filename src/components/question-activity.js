@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import questionActivityStyles from "../styles/question-activity.module.css";
 
 export default class QuestoinActivity extends Component {
@@ -25,9 +25,9 @@ export default class QuestoinActivity extends Component {
     const options = activity.options.map((option, idx) => (
       <li key={`option-${idx}`}>
         <input 
-          type='radio' 
+          type="radio" 
           value={`${option}`} 
-          name='radio'  
+          name="radio"  
           id={`radio${idx}`}
           onClick={this.handleClick}
           defaultChecked={localStorageVal === option}

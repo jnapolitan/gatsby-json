@@ -21,7 +21,7 @@ export default class TextActivity extends Component {
     const localStorageVal = this.getLocalStorageVal();
     
     if (!localStorageVal) {
-      localStorage.setItem(this.getLocalStorageKey(), 'read');
+      localStorage.setItem(this.getLocalStorageKey(), "read");
     } else {
       localStorage.removeItem(this.getLocalStorageKey());
     }

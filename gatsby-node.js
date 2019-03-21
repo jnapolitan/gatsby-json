@@ -1,6 +1,6 @@
-const crypto = require('crypto');
-const path = require('path');
-const changeCase = require('change-case');
+const crypto = require("crypto");
+const path = require("path");
+const changeCase = require("change-case");
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNode, createNodeField } = actions;
@@ -35,7 +35,7 @@ exports.onCreateNode = ({ node, actions }) => {
     });
   }
 
-  if (node.internal.type === 'Section') {
+  if (node.internal.type === "Section") {
     const { programName, order } = node;
     const slug = `programs/${programName}/part-${order}`;
     createNodeField({

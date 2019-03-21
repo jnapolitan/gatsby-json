@@ -4,7 +4,6 @@ module.exports = {
     description: `An overview of programs available to you through Modern Health.`,
     author: `Modern Health`,
   },
-  pathPrefix: '/programs',
   plugins: [
     `gatsby-transformer-json`,
     {
@@ -33,11 +32,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/modern-health-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/modern-health-icon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
   ],
 }
