@@ -8,20 +8,9 @@ import QuestionActivity from "../components/question-activity";
 import sectionStyles from "../styles/section.module.css";
 
 export default class Section extends Component {
-  constructor(props) {
-    super(props);
-
-    this.section = props.data.section;
-    this.order = this.section.order;
-    this.endOrder = this.section.endOrder;
-    this.programId = this.section.programId;
-    this.programName = this.section.programName;
-    this.activities = this.section.activities;
-    this.numActivities = this.section.activities.length;
-  }
-
+  
   createBackLink() {
-    const { programName, order } = this.section;
+    const { programName, order } = this.props.data.section;
     let link;
 
     if (order - 1 === 0) {
@@ -34,7 +23,7 @@ export default class Section extends Component {
   }
 
   createContinueLink() {
-    const { programName, order, endOrder } = this.section;
+    const { programName, order, endOrder } = this.props.data.section;
     let link;
 
     if (order === endOrder) {
@@ -47,10 +36,11 @@ export default class Section extends Component {
   }
 
   render() {
-    const { order, programId } = this.section;
+    const { section } = this.props.data;
+    const { order, programId, activities } = section;
     const orderString = capitalize(toWords(order));
 
-    const activities = this.section.activities.map((activity, idx) => {
+    const allActivities = activities.map((activity, idx) => {
       if (activity.type === "Text") {
         return <TextActivity 
           activity={activity}
@@ -74,15 +64,15 @@ export default class Section extends Component {
       <Layout>
         <div className={sectionStyles.container}>
           <h3 className={sectionStyles.name}>
-            {`Part ${orderString}: ${this.section.name}`}
+            {`Part ${orderString}: ${section.name}`}
           </h3>
           <div className={sectionStyles.content}>
-            <p>{this.section.description}</p>
-            <img src={this.section.image} alt={this.section.name} />
+            <p>{section.description}</p>
+            <img src={section.image} alt={section.name} />
           </div>
           <h4>This section's activities:</h4>
           <div className={sectionStyles.activities}>
-            { activities }
+            { allActivities }
           </div>
           <div className={sectionStyles.buttons}>
             {this.createBackLink()}

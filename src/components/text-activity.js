@@ -5,40 +5,43 @@ export default class TextActivity extends Component {
   constructor(props) {
     super(props);
 
-    const { programId, sectionId, activityId } = this.props;
-    this.localStorageKey = `${programId}${sectionId}${activityId}`;
-
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  getLocalStorageKey() {
+    const { programId, sectionId, activityId } = this.props;
+    return `${programId}${sectionId}${activityId}`;
+  }
+
+  getLocalStorageVal() {
+    return localStorage.getItem(this.getLocalStorageKey());
   }
 
   handleClick() {
     const localStorageVal = this.getLocalStorageVal();
     
     if (!localStorageVal) {
-      localStorage.setItem(this.localStorageKey, 'read');
+      localStorage.setItem(this.getLocalStorageKey(), 'read');
     } else {
-      localStorage.removeItem(this.localStorageKey);
+      localStorage.removeItem(this.getLocalStorageKey());
     }
 
     this.forceUpdate();
   }
 
-  getLocalStorageVal() {
-    return localStorage.getItem(this.localStorageKey);
-  }
-
   render() {
     const { activity } = this.props;
     const localStorageVal = this.getLocalStorageVal();
-    const completedClass = localStorageVal ? `${textActivityStyles.read}` : "";
+    const markRead = localStorageVal ? `${textActivityStyles.read}` : "";
 
     return (
       <div>
         <p className={textActivityStyles.content}>{activity.content}</p>
         <button 
-          className={`${textActivityStyles.activityButton} ${completedClass}`}
+          className={`${textActivityStyles.activityButton} ${markRead}`}
           onClick={this.handleClick}
-          >Mark as read
+        >
+          Mark as read
         </button>
       </div>
     )

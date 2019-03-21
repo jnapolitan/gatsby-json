@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Program from "../components/program";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -18,8 +18,11 @@ const ProgramsPage = ({ data }) => {
         <img src={programOverviewHeaderImage} alt="hand-with-heart" />
         <div>
           <h2>Program Overview</h2>
-          <p>Welcome to your Program Overview page. Here you'll find helpful resources and activities to help you manage your mental well-being so you can stay happy and healthy.</p>
-          <button className={programOverviewStyles.pgButton}>Get started</button>
+          <p>Welcome to your Program Overview page. Here you'll find helpful 
+            resources and activities to help you manage your mental well-being 
+            so you can stay happy and healthy.
+          </p>
+          <button className={programOverviewStyles.pgButton}>Begin</button>
         </div>
       </div>
       { programs }

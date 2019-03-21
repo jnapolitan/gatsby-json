@@ -6,20 +6,13 @@ import { Link } from 'gatsby';
 import programSectionStyles from '../styles/program-section.module.css';
 
 export default class ProgramSection extends Component {
-  constructor(props) {
-    super(props);
-
-    this.section = props.section;
-    this.order = this.section.order;
-    this.programId = this.section.programId;
-    this.programName = this.section.programName;
-    this.numActivities = this.section.activities.length;
-  }
 
   allActivitiesComplete() {
-    const localStorageKeyPrefix = `${this.programId}${this.order}`;
-    for (let i = 1; i <= this.numActivities; i++) {
-      const localStorageKey = `${localStorageKeyPrefix}${i}`;
+    const { programId, order, activities } = this.props.section;
+    const localStorageKeyPrefix = `${programId}${order}`;
+
+    for (let activity = 1; activity <= activities.length; activity++) {
+      const localStorageKey = `${localStorageKeyPrefix}${activity}`;
       if (!localStorage.getItem(localStorageKey)) return false;
     }
 
@@ -33,16 +26,17 @@ export default class ProgramSection extends Component {
   }
 
   render() {
-    const orderString = capitalize(toWords(this.order));
+    const { order, programName, image, name } = this.props.section;
+    const orderString = capitalize(toWords(order));
 
     return (
-      <Link to={`/programs/${this.programName}/part-${this.order}`}>
+      <Link to={`/programs/${programName}/part-${order}`}>
         <div className={programSectionStyles.container}>
           {this.markComplete()}
-          <img src={this.section.image} alt={`${this.section.name}`} />
+          <img src={image} alt={`${name}`} />
           <div>
             <p>Part {orderString}</p>
-            <h4>{this.section.name}</h4>
+            <h4>{name}</h4>
           </div>
         </div>
       </Link>

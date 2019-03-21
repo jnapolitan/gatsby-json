@@ -4,17 +4,17 @@ import ProgramSection from './program-section';
 import programStyles from '../styles/program.module.css';
 
 export default props => {
-  const program = props.program.node;
-  const sections = program.sections.map((section, idx) => (
+  const { name, description, sections } = props.program.node;
+
+  const allSections = sections.map((section, idx) => (
     <ProgramSection section={section} key={`section-${idx}`} />
   ));
-  const { name, description } = program;
 
   return (
     <div className={programStyles.container}>
       <ProgramHeader name={name} description={description} />
       <div className={programStyles.sections}>
-        { sections }
+        { allSections }
       </div>
     </div>
   )

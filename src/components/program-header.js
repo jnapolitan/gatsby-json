@@ -48,7 +48,8 @@ export default class ProgramHeader extends Component {
             <span 
               className={programHeaderStyles.closeModal} 
               onClick={this.closeModal}
-              >x
+            >
+              x
             </span>
           </div>
           <p>{description}</p>
