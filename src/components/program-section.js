@@ -12,7 +12,9 @@ export default class ProgramSection extends Component {
     this.section = props.section;
     this.order = this.section.order;
     this.programId = this.section.programId;
+    this.programName = this.section.programName;
     this.numActivities = this.section.activities.length;
+    console.log(props);
   }
 
   allActivitiesComplete() {
@@ -35,7 +37,7 @@ export default class ProgramSection extends Component {
     const orderString = capitalize(toWords(this.order));
 
     return (
-      <Link to={`/programs/${this.programId}/${this.order}`}>
+      <Link to={`/programs/${this.programName}/part-${this.order}`}>
         <div className={programSectionStyles.container}>
           {this.markComplete()}
           <img src={this.section.image} alt={`${this.section.name}`} />

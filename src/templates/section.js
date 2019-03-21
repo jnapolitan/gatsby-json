@@ -15,6 +15,7 @@ export default class Section extends Component {
     this.order = this.section.order;
     this.endOrder = this.section.endOrder;
     this.programId = this.section.programId;
+    this.programName = this.section.programName;
     this.activities = this.section.activities;
     this.numActivities = this.section.activities.length;
   }
@@ -29,7 +30,7 @@ export default class Section extends Component {
     } else {
       return <Link 
         className={sectionStyles.back} 
-        to={`/programs/${this.programId}/${this.order - 1}`}
+        to={`/programs/${this.programName}/part-${this.order - 1}`}
         >Back
       </Link>
     }
@@ -41,7 +42,7 @@ export default class Section extends Component {
     } else {
       return <Link 
         className={sectionStyles.continue} 
-        to={`/programs/${this.programId}/${this.order + 1}`}
+        to={`/programs/${this.programName}/part-${this.order + 1}`}
         >Continue
       </Link>
     }
@@ -96,6 +97,7 @@ export const query = graphql`
   query($slug: String!) {
     section(fields: { slug: { eq: $slug } }) {
       programId
+      programName
       name
       description
       image

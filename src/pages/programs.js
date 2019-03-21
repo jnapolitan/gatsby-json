@@ -31,6 +31,7 @@ export const query = graphql`
         description
         sections {
           programId
+          programName
           order
           name
           image
