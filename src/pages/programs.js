@@ -22,7 +22,6 @@ const ProgramsPage = ({ data }) => {
             resources and activities to help you manage your mental well-being 
             so you can stay happy and healthy.
           </p>
-          <button className={programOverviewStyles.pgButton}>Begin</button>
         </div>
       </div>
       { programs }

@@ -3,13 +3,12 @@ import { graphql, Link } from "gatsby";
 import { toWords } from "number-to-words";
 import capitalize from "capitalize";
 import Layout from "../components/layout";
-import TextActivity from "../components/text-activity";
-import QuestionActivity from "../components/question-activity";
+import SectionActivities from "../components/section-activities";
 import sectionStyles from "../styles/section.module.css";
 
 export default class Section extends Component {
   
-  createBackLink() {
+  renderBackLink() {
     const { programName, order } = this.props.data.section;
     let link;
 
@@ -22,7 +21,7 @@ export default class Section extends Component {
     return <Link className={sectionStyles.back} to={link}>Back</Link>
   }
 
-  createContinueLink() {
+  renderContinueLink() {
     const { programName, order, endOrder } = this.props.data.section;
     let link;
 
@@ -39,26 +38,7 @@ export default class Section extends Component {
     const { section } = this.props.data;
     const { order, programId, activities } = section;
     const orderString = capitalize(toWords(order));
-
-    const allActivities = activities.map((activity, idx) => {
-      if (activity.type === "Text") {
-        return <TextActivity 
-          activity={activity}
-          programId={programId}
-          sectionId={order}
-          activityId={idx + 1} 
-          key={`activity-${idx}`} 
-        />
-      } else if (activity.type === "Question") {
-        return <QuestionActivity 
-          activity={activity}
-          programId={programId}
-          sectionId={order}
-          activityId={idx + 1} 
-          key={`activity-${idx}`}
-        />
-      }
-    });
+    
 
     return (
       <Layout>
@@ -70,13 +50,14 @@ export default class Section extends Component {
             <p>{section.description}</p>
             <img src={section.image} alt={section.name} />
           </div>
-          <h4>This section's activities:</h4>
-          <div className={sectionStyles.activities}>
-            { allActivities }
-          </div>
+          <SectionActivities 
+            programId={programId} 
+            activities={activities} 
+            order={order} 
+          />
           <div className={sectionStyles.buttons}>
-            {this.createBackLink()}
-            {this.createContinueLink()}
+            {this.renderBackLink()}
+            {this.renderContinueLink()}
           </div>
         </div>
       </Layout>
