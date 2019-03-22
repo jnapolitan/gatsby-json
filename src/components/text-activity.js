@@ -27,10 +27,9 @@ export default class TextActivity extends Component {
 
   renderButton() {
     const isRead = this.getLocalStorageVal();
-    console.log(this.getLocalStorageVal());
     let classes, buttonText;
 
-    if (isRead === "read") {
+    if (isRead) {
       classes = `${textActivityStyles.activityButton} ${textActivityStyles.read}`;
       buttonText = "Mark unread";
     } else {
@@ -40,8 +39,10 @@ export default class TextActivity extends Component {
 
     return <button 
       className={classes} 
-      onClick={this.handleClick}>{buttonText}
-    </button>;
+      onClick={this.handleClick}
+      >
+        {buttonText}
+      </button>;
   }
 
   render() {
