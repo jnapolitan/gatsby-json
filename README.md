@@ -8,7 +8,11 @@ browser, with no back-end or external APIs.</p>
 
 1.  **Installation instructions:**
 
-    Clone the repository and then run `npm install` and `npm start`.
+    1. Clone the repository
+    2. `cd programs-module`
+    3. `npm install`
+    4. `npm start`
+    5. Open `localhost:8000` in your browser.
 
 
 1.  **Technologies used:**
