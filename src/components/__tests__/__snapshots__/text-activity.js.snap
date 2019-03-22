@@ -2,16 +2,19 @@
 
 exports[`Text Activity renders correctly 1`] = `
 <div>
-  <p
+  <div
     className="content"
-  >
-    After two weeks people report better focus and memory. Overall, most people will start to notice changes in a few weeks when they practice for 10-20 minutes a day but keep in mind that this will be different for everyone. Pay attention to your own experience - mindfulness can help you develop more patience with this too.
-  </p>
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "After two weeks people report better focus and memory. Overall, most people will start to notice changes in a few weeks when they practice for 10-20 minutes a day but keep in mind that this will be different for everyone. Pay attention to your own experience - mindfulness can help you develop more patience with this too.",
+      }
+    }
+  />
   <button
-    className="activityButton "
+    className="activityButton"
     onClick={[Function]}
   >
-    Mark as read
+    Mark read
   </button>
 </div>
 `;
