@@ -53,6 +53,9 @@ export default class Section extends Component {
             <p>{section.description}</p>
             <img src={section.image} alt={section.name} />
           </div>
+          <div className={sectionStyles.activities}>
+            <h3>Activities</h3>
+          </div>
           <SectionActivities 
             storagePrefix={storagePrefix} 
             activities={activities} 

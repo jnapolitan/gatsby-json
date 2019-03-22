@@ -25,20 +25,33 @@ export default class TextActivity extends Component {
     this.forceUpdate();
   }
 
+  renderButton() {
+    const isRead = this.getLocalStorageVal();
+    console.log(this.getLocalStorageVal());
+    let classes, buttonText;
+
+    if (isRead === "read") {
+      classes = `${textActivityStyles.activityButton} ${textActivityStyles.read}`;
+      buttonText = "Mark unread";
+    } else {
+      classes = `${textActivityStyles.activityButton}`;
+      buttonText = "Mark read";
+    }
+
+    return <button 
+      className={classes} 
+      onClick={this.handleClick}>{buttonText}
+    </button>;
+  }
+
   render() {
     const { activity } = this.props;
-    const localStorageVal = this.getLocalStorageVal();
-    const markRead = localStorageVal ? `${textActivityStyles.read}` : "";
+    
 
     return (
       <div>
         <p className={textActivityStyles.content}>{activity.content}</p>
-        <button 
-          className={`${textActivityStyles.activityButton} ${markRead}`}
-          onClick={this.handleClick}
-        >
-          Mark as read
-        </button>
+        {this.renderButton()}
       </div>
     )
   }
