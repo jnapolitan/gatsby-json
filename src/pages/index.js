@@ -38,7 +38,7 @@ export const query = graphql`
         name
         description
         sections {
-          programId
+          storagePrefix
           programName
           order
           name

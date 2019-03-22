@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import { toWords } from "number-to-words";
-import { titleCase } from 'change-case';
 import capitalize from "capitalize";
 import Layout from "../components/layout";
 import SectionActivities from "../components/section-activities";
@@ -41,7 +40,7 @@ export default class Section extends Component {
 
   render() {
     const { section } = this.props.data;
-    const { order, programId, activities } = section;
+    const { order, storagePrefix, activities } = section;
     const orderString = capitalize(toWords(order));
     
     return (
@@ -55,7 +54,7 @@ export default class Section extends Component {
             <img src={section.image} alt={section.name} />
           </div>
           <SectionActivities 
-            programId={programId} 
+            storagePrefix={storagePrefix} 
             activities={activities} 
             order={order} 
           />
@@ -72,7 +71,7 @@ export default class Section extends Component {
 export const query = graphql`
   query($slug: String!) {
     section(fields: { slug: { eq: $slug } }) {
-      programId
+      storagePrefix
       programName
       name
       description

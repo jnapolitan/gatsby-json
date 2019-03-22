@@ -12,7 +12,7 @@ exports.onCreateNode = ({ node, actions }) => {
       .sort((a, b) => a.order - b.order)
       .forEach((section, idx) => {
         section.order = idx + 1;
-        section.programId = node.id;
+        section.storagePrefix = `${node.id}${section.order}`;
         section.programName = changeCase.kebabCase(node.name);
         section.endOrder = endOrder;
         

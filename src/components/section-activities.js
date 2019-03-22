@@ -5,7 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 export default props => {
-  const { programId, activities, order } = props;
+  const { storagePrefix, activities } = props;
   const textActivities = [];
   const questionActivities = [];
   const emptyText = <p>Nothing here for this section :)</p>
@@ -14,7 +14,7 @@ export default props => {
     if (activity.type === "Text") {
       const textActivity = <TextActivity 
         activity={activity}
-        localStorageKey={`${programId}${order}${idx + 1}`}
+        localStorageKey={`${storagePrefix}${idx + 1}`}
         key={`activity-${idx}`} 
       />
 
@@ -23,7 +23,7 @@ export default props => {
     } else if (activity.type === "Question") {
       const questionActivity = <QuestionActivity 
         activity={activity}
-        localStorageKey={`${programId}${order}${idx + 1}`}
+        localStorageKey={`${storagePrefix}${idx + 1}`}
         key={`activity-${idx}`}
       />
 
