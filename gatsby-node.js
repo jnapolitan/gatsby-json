@@ -15,6 +15,7 @@ exports.onCreateNode = ({ node, actions }) => {
         section.storagePrefix = `${node.id}${section.order}`;
         section.programName = node.name;
         section.endOrder = endOrder;
+        section.numActivities = section.activities.length;
         
         const nodeMetadata = {
           id: `${node.id}-${idx}`,

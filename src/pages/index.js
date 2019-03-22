@@ -34,18 +34,15 @@ export const query = graphql`
   allProgramsJson {
     edges {
       node {
-        id
         name
         description
         sections {
           storagePrefix
+          numActivities
           programName
           order
           name
           image
-          activities {
-            type
-          }
         }
       }
     }

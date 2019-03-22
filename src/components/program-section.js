@@ -7,10 +7,10 @@ import programSectionStyles from "../styles/program-section.module.css";
 
 export default class ProgramSection extends Component {
   allActivitiesComplete() {
-    const { storagePrefix, activities } = this.props.section;
+    const { storagePrefix, numActivities } = this.props.section;
 
-    for (let activity = 1; activity <= activities.length; activity++) {
-      const localStorageKey = `${storagePrefix}${activity}`;
+    for (let i = 1; i <= numActivities; i++) {
+      const localStorageKey = `${storagePrefix}${i}`;
       if (!localStorage.getItem(localStorageKey)) return false;
     }
 
