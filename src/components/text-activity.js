@@ -8,22 +8,18 @@ export default class TextActivity extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  getLocalStorageKey() {
-    const { programId, sectionId, activityId } = this.props;
-    return `${programId}${sectionId}${activityId}`;
-  }
-
   getLocalStorageVal() {
-    return localStorage.getItem(this.getLocalStorageKey());
+    return localStorage.getItem(this.props.localStorageKey);
   }
 
   handleClick() {
+    const { localStorageKey } = this.props;
     const localStorageVal = this.getLocalStorageVal();
     
     if (!localStorageVal) {
-      localStorage.setItem(this.getLocalStorageKey(), "read");
+      localStorage.setItem(localStorageKey, "read");
     } else {
-      localStorage.removeItem(this.getLocalStorageKey());
+      localStorage.removeItem(localStorageKey);
     }
 
     this.forceUpdate();

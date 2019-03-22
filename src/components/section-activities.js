@@ -14,9 +14,7 @@ export default props => {
     if (activity.type === "Text") {
       const textActivity = <TextActivity 
         activity={activity}
-        programId={programId}
-        sectionId={order}
-        activityId={idx + 1} 
+        localStorageKey={`${programId}${order}${idx + 1}`}
         key={`activity-${idx}`} 
       />
 
@@ -25,9 +23,7 @@ export default props => {
     } else if (activity.type === "Question") {
       const questionActivity = <QuestionActivity 
         activity={activity}
-        programId={programId}
-        sectionId={order}
-        activityId={idx + 1} 
+        localStorageKey={`${programId}${order}${idx + 1}`}
         key={`activity-${idx}`}
       />
 

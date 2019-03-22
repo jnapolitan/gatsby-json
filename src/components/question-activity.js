@@ -8,19 +8,14 @@ export default class QuestoinActivity extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  getLocalStorageKey() {
-    const { programId, sectionId, activityId } = this.props;
-    return `${programId}${sectionId}${activityId}`;
-  }
-
   handleClick(e) {
-    localStorage.setItem(this.getLocalStorageKey(), e.target.value);
+    localStorage.setItem(this.props.localStorageKey, e.target.value);
     this.forceUpdate();
   }
 
   render() {
-    const { activity } = this.props;
-    const localStorageVal = localStorage.getItem(this.getLocalStorageKey());
+    const { activity, localStorageKey } = this.props;
+    const localStorageVal = localStorage.getItem(localStorageKey);
 
     const options = activity.options.map((option, idx) => (
       <li key={`option-${idx}`}>
