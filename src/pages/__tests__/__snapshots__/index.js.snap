@@ -18,14 +18,7 @@ Array [
     </div>
   </header>,
   <div
-    style={
-      Object {
-        "margin": "0 auto",
-        "maxWidth": 960,
-        "padding": "0px 1.0875rem 1.45rem",
-        "paddingTop": 0,
-      }
-    }
+    className="container"
   >
     <main>
       <div
@@ -74,7 +67,9 @@ Array [
                 src="https://my.joinmodernhealth.com/static/media/meditation-image-page.71f7c8b3.png"
               />
               <div>
-                <p>
+                <p
+                  className="partText"
+                >
                   Part 
                   One
                 </p>
@@ -95,7 +90,9 @@ Array [
                 src="https://my.joinmodernhealth.com/static/media/values.e8b1dc68.png"
               />
               <div>
-                <p>
+                <p
+                  className="partText"
+                >
                   Part 
                   Two
                 </p>
@@ -116,7 +113,9 @@ Array [
                 src="https://my.joinmodernhealth.com/static/media/action.605a754d.png"
               />
               <div>
-                <p>
+                <p
+                  className="partText"
+                >
                   Part 
                   Three
                 </p>
@@ -137,7 +136,9 @@ Array [
                 src="https://my.joinmodernhealth.com/static/media/flexibility.edd8dc40.png"
               />
               <div>
-                <p>
+                <p
+                  className="partText"
+                >
                   Part 
                   Four
                 </p>
@@ -179,7 +180,9 @@ Array [
                 src="https://staging.joinmodernhealth.com/static/media/psychological-first-aid.38f004a7.svg"
               />
               <div>
-                <p>
+                <p
+                  className="partText"
+                >
                   Part 
                   One
                 </p>
@@ -200,7 +203,9 @@ Array [
                 src="https://staging.joinmodernhealth.com/static/media/undraw-feeling-blue-4-b-7-q-copy.74c19b42.svg"
               />
               <div>
-                <p>
+                <p
+                  className="partText"
+                >
                   Part 
                   Two
                 </p>

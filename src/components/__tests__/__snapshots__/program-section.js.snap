@@ -12,7 +12,9 @@ exports[`Program Section renders correctly 1`] = `
       src="https://my.joinmodernhealth.com/static/media/meditation-image-page.71f7c8b3.png"
     />
     <div>
-      <p>
+      <p
+        className="partText"
+      >
         Part 
         One
       </p>

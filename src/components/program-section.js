@@ -6,7 +6,6 @@ import { Link } from "gatsby";
 import programSectionStyles from "../styles/program-section.module.css";
 
 export default class ProgramSection extends Component {
-
   allActivitiesComplete() {
     const { programId, order, activities } = this.props.section;
     const localStorageKeyPrefix = `${programId}${order}`;

@@ -31,7 +31,9 @@ exports[`Program renders correctly 1`] = `
           src="https://my.joinmodernhealth.com/static/media/meditation-image-page.71f7c8b3.png"
         />
         <div>
-          <p>
+          <p
+            className="partText"
+          >
             Part 
             One
           </p>
@@ -52,7 +54,9 @@ exports[`Program renders correctly 1`] = `
           src="https://my.joinmodernhealth.com/static/media/values.e8b1dc68.png"
         />
         <div>
-          <p>
+          <p
+            className="partText"
+          >
             Part 
             Two
           </p>
@@ -73,7 +77,9 @@ exports[`Program renders correctly 1`] = `
           src="https://my.joinmodernhealth.com/static/media/action.605a754d.png"
         />
         <div>
-          <p>
+          <p
+            className="partText"
+          >
             Part 
             Three
           </p>
@@ -94,7 +100,9 @@ exports[`Program renders correctly 1`] = `
           src="https://my.joinmodernhealth.com/static/media/flexibility.edd8dc40.png"
         />
         <div>
-          <p>
+          <p
+            className="partText"
+          >
             Part 
             Four
           </p>
