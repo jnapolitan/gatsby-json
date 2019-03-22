@@ -6,7 +6,7 @@ exports[`Header renders correctly 1`] = `
     className="container"
   >
     <a
-      href="/programs"
+      href="/"
     >
       <img
         alt="logo"

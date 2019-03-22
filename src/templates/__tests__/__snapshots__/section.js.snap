@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section renders correctly 1`] = `
+Array [
+  <header>
+    <div
+      className="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          alt="logo"
+          className="headerImg"
+          src="test-file-stub"
+        />
+      </a>
+    </div>
+  </header>,
+  <div
+    style={
+      Object {
+        "margin": "0 auto",
+        "maxWidth": 960,
+        "padding": "0px 1.0875rem 1.45rem",
+        "paddingTop": 0,
+      }
+    }
+  >
+    <main>
+      <div
+        className="container"
+      >
+        <h3
+          className="name"
+        >
+          Part One: Mindfulness
+        </h3>
+        <div
+          className="content"
+        >
+          <p>
+            Mindfulness is the ability to be fully present and aware of in the current moment, without judging your experience or yourself.
+          </p>
+          <img
+            alt="Mindfulness"
+            src="https://my.joinmodernhealth.com/static/media/meditation-image-page.71f7c8b3.png"
+          />
+        </div>
+        <div
+          className="react-tabs"
+          data-tabs={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <ul
+            className="react-tabs__tab-list"
+            role="tablist"
+          >
+            <li
+              aria-controls="react-tabs-1"
+              aria-disabled="false"
+              aria-selected="true"
+              className="react-tabs__tab react-tabs__tab--selected"
+              id="react-tabs-0"
+              role="tab"
+              tabIndex="0"
+            >
+              <h5>
+                Readings
+              </h5>
+            </li>
+            <li
+              aria-controls="react-tabs-3"
+              aria-disabled="false"
+              aria-selected="false"
+              className="react-tabs__tab"
+              id="react-tabs-2"
+              role="tab"
+              tabIndex={null}
+            >
+              <h5>
+                Questions
+              </h5>
+            </li>
+          </ul>
+          <div
+            aria-labelledby="react-tabs-0"
+            className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+            id="react-tabs-1"
+            role="tabpanel"
+          >
+            <div>
+              <p
+                className="content"
+              >
+                Mindfulness is a type of meditation. It can be practiced both formally (i.e. sitting down and focusing on the breath or body intentionally for a few minutes) or informally (i.e. bringing your focus and attention to an activity to the moment while you engage in an activity).
+              </p>
+              <button
+                className="activityButton "
+                onClick={[Function]}
+              >
+                Mark as read
+              </button>
+            </div>
+            <div>
+              <p
+                className="content"
+              >
+                After only eight minutes of mindfulness practice people often start to notice a calmer mind.
+              </p>
+              <button
+                className="activityButton "
+                onClick={[Function]}
+              >
+                Mark as read
+              </button>
+            </div>
+            <div>
+              <p
+                className="content"
+              >
+                After two weeks people report better focus and memory. Overall, most people will start to notice changes in a few weeks when they practice for 10-20 minutes a day but keep in mind that this will be different for everyone. Pay attention to your own experience - mindfulness can help you develop more patience with this too.
+              </p>
+              <button
+                className="activityButton "
+                onClick={[Function]}
+              >
+                Mark as read
+              </button>
+            </div>
+          </div>
+          <div
+            aria-labelledby="react-tabs-2"
+            className="react-tabs__tab-panel"
+            id="react-tabs-3"
+            role="tabpanel"
+          />
+        </div>
+        <div
+          className="buttons"
+        >
+          <a
+            className="back"
+            href="/"
+          >
+            Back to programs
+          </a>
+          <a
+            className="continue"
+            href="/core-pillars-program/part-2"
+          >
+            Continue
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>,
+]
+`;

@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question Activity renders correctly 1`] = `
+Array [
+  <h4
+    className="prompt"
+  >
+    How do you want to use mindfulness to improve your work?
+  </h4>,
+  <ul
+    className="options"
+  >
+    <li>
+      <input
+        defaultChecked={false}
+        id="radio0"
+        name="radio"
+        onClick={[Function]}
+        type="radio"
+        value="Increase Focus"
+      />
+      <label
+        className="option"
+        htmlFor="radio0"
+      >
+        Increase Focus
+      </label>
+    </li>
+    <li>
+      <input
+        defaultChecked={false}
+        id="radio1"
+        name="radio"
+        onClick={[Function]}
+        type="radio"
+        value="Improve Concentration"
+      />
+      <label
+        className="option"
+        htmlFor="radio1"
+      >
+        Improve Concentration
+      </label>
+    </li>
+    <li>
+      <input
+        defaultChecked={false}
+        id="radio2"
+        name="radio"
+        onClick={[Function]}
+        type="radio"
+        value="Mental Clarity"
+      />
+      <label
+        className="option"
+        htmlFor="radio2"
+      >
+        Mental Clarity
+      </label>
+    </li>
+    <li>
+      <input
+        defaultChecked={false}
+        id="radio3"
+        name="radio"
+        onClick={[Function]}
+        type="radio"
+        value="Reduce Stress"
+      />
+      <label
+        className="option"
+        htmlFor="radio3"
+      >
+        Reduce Stress
+      </label>
+    </li>
+    <li>
+      <input
+        defaultChecked={false}
+        id="radio4"
+        name="radio"
+        onClick={[Function]}
+        type="radio"
+        value="Respond With Kindness"
+      />
+      <label
+        className="option"
+        htmlFor="radio4"
+      >
+        Respond With Kindness
+      </label>
+    </li>
+    <li>
+      <input
+        defaultChecked={false}
+        id="radio5"
+        name="radio"
+        onClick={[Function]}
+        type="radio"
+        value="More Self-Control"
+      />
+      <label
+        className="option"
+        htmlFor="radio5"
+      >
+        More Self-Control
+      </label>
+    </li>
+    <li>
+      <input
+        defaultChecked={false}
+        id="radio6"
+        name="radio"
+        onClick={[Function]}
+        type="radio"
+        value="Other"
+      />
+      <label
+        className="option"
+        htmlFor="radio6"
+      >
+        Other
+      </label>
+    </li>
+  </ul>,
+]
+`;

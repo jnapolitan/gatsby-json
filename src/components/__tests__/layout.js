@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Header from "../header";
+import Layout from "../layout";
 
-describe("Header", () => {
+describe("Layout", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Header />).toJSON();
+    const tree = renderer.create(<Layout />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

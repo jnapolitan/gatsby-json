@@ -6,7 +6,7 @@ import headerImage from "../images/header-image.svg";
 const Header = () => (
   <header>
     <div className={headerStyles.container}>
-      <Link to="/programs">
+      <Link to="/">
         <img className={headerStyles.headerImg} src={headerImage} alt="logo" />
       </Link>
     </div>

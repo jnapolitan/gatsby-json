@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Not Found Page renders correctly 1`] = `
+Array [
+  <header>
+    <div
+      className="container"
+    >
+      <a
+        href="/"
+      >
+        <img
+          alt="logo"
+          className="headerImg"
+          src="test-file-stub"
+        />
+      </a>
+    </div>
+  </header>,
+  <div
+    style={
+      Object {
+        "margin": "0 auto",
+        "maxWidth": 960,
+        "padding": "0px 1.0875rem 1.45rem",
+        "paddingTop": 0,
+      }
+    }
+  >
+    <main>
+      <h1>
+        NOT FOUND
+      </h1>
+      <p>
+        You just hit a route that doesn't exist... the sadness.
+      </p>
+    </main>
+  </div>,
+]
+`;

@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Header from "../header";
+import NotFoundPage from "../404";
 
-describe("Header", () => {
+describe("Not Found Page", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Header />).toJSON();
+    const tree = renderer.create(<NotFoundPage />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

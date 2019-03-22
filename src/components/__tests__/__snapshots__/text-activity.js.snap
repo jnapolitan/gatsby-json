@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Activity renders correctly 1`] = `
+<div>
+  <p
+    className="content"
+  >
+    After two weeks people report better focus and memory. Overall, most people will start to notice changes in a few weeks when they practice for 10-20 minutes a day but keep in mind that this will be different for everyone. Pay attention to your own experience - mindfulness can help you develop more patience with this too.
+  </p>
+  <button
+    className="activityButton "
+    onClick={[Function]}
+  >
+    Mark as read
+  </button>
+</div>
+`;

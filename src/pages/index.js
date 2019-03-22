@@ -2,18 +2,16 @@ import React from "react";
 import { graphql } from "gatsby";
 import Program from "../components/program";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 import programOverviewStyles from "../styles/program-overview.module.css";
 import programOverviewHeaderImage from "../images/pgm-overview-header.png";
 
-const ProgramsPage = ({ data }) => {
+const Index = ({ data }) => {
   const programs = data.allProgramsJson.edges.map((program, idx) => (
     <Program program={program} key={`program-${idx}`} />
   ));
 
   return (
     <Layout>
-      <SEO title="Program Overview" />
       <div className={programOverviewStyles.header}>
         <img src={programOverviewHeaderImage} alt="hand-with-heart" />
         <div>
@@ -29,7 +27,7 @@ const ProgramsPage = ({ data }) => {
   )
 }
 
-export default ProgramsPage;
+export default Index;
 
 export const query = graphql`
 {

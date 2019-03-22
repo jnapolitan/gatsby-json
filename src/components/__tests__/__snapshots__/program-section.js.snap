@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Program Section renders correctly 1`] = `
+<a
+  href="/core-pillars-program/part-1"
+>
+  <div
+    className="container"
+  >
+    <img
+      alt="Mindfulness"
+      src="https://my.joinmodernhealth.com/static/media/meditation-image-page.71f7c8b3.png"
+    />
+    <div>
+      <p>
+        Part 
+        One
+      </p>
+      <h4>
+        Mindfulness
+      </h4>
+    </div>
+  </div>
+</a>
+`;
