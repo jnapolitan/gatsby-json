@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import { toWords } from "number-to-words";
-import capitalize from "capitalize";
+import { titleCase, kebabCase } from "change-case";
 import Layout from "../components/layout";
 import SectionActivities from "../components/section-activities";
 import sectionStyles from "../styles/section.module.css";
@@ -16,7 +16,7 @@ export default class Section extends Component {
       link = "/";
       buttonText = "Back to programs";
     } else {
-      link = `/${programName}/part-${order - 1}`;
+      link = `/${kebabCase(programName)}/part-${order - 1}`;
       buttonText = "Back";
     }
 
@@ -31,7 +31,7 @@ export default class Section extends Component {
       link = "/";
       buttonText = "Finish";
     } else {
-      link = `/${programName}/part-${order + 1}`
+      link = `/${kebabCase(programName)}/part-${order + 1}`
       buttonText = "Continue";
     }
 
@@ -40,15 +40,16 @@ export default class Section extends Component {
 
   render() {
     const { section } = this.props.data;
-    const { order, storagePrefix, activities } = section;
-    const orderString = capitalize(toWords(order));
+    const { order, storagePrefix, activities, programName } = section;
+    const orderString = titleCase(toWords(order));
     
     return (
       <Layout>
         <div className={sectionStyles.container}>
-          <h3 className={sectionStyles.name}>
-            {`Part ${orderString}: ${section.name}`}
-          </h3>
+          <div className={sectionStyles.header}>
+            <p>{programName}</p>
+            <h4>{`Part ${orderString}: ${section.name}`}</h4>
+          </div>
           <div className={sectionStyles.content}>
             <p>{section.description}</p>
             <img src={section.image} alt={section.name} />

@@ -2,9 +2,21 @@
   margin-bottom: 150px;
 }
 
-.name {
-  padding-bottom: 25px;
+.header {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
+  align-items: center;
+  padding-bottom: 10px;
   border-bottom: 5px solid #F1F1F1;
+}
+
+.header p {
+  font-weight: bold;
+  font-size: 16px;
+  color: lightgray;
+}
+
+.header h4 {
   text-align: center;
 }
 
@@ -45,6 +57,7 @@
   padding: 10px 15px;
   min-width: 200px;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .buttons a.back {

@@ -13,7 +13,7 @@ exports.onCreateNode = ({ node, actions }) => {
       .forEach((section, idx) => {
         section.order = idx + 1;
         section.storagePrefix = `${node.id}${section.order}`;
-        section.programName = changeCase.kebabCase(node.name);
+        section.programName = node.name;
         section.endOrder = endOrder;
         
         const nodeMetadata = {
@@ -37,7 +37,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
   if (node.internal.type === "Section") {
     const { programName, order } = node;
-    const slug = `${programName}/part-${order}`;
+    const slug = `${changeCase.kebabCase(programName)}/part-${order}`;
     createNodeField({
       node,
       name: `slug`,

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { toWords } from "number-to-words";
-import capitalize from "capitalize";
+import { titleCase, kebabCase } from "change-case";
 import { FaCheckSquare } from "react-icons/fa";
 import { Link } from "gatsby";
 import programSectionStyles from "../styles/program-section.module.css";
@@ -25,10 +25,10 @@ export default class ProgramSection extends Component {
 
   render() {
     const { order, programName, image, name } = this.props.section;
-    const orderString = capitalize(toWords(order));
+    const orderString = titleCase(toWords(order));
 
     return (
-      <Link to={`/${programName}/part-${order}`}>
+      <Link to={`/${kebabCase(programName)}/part-${order}`}>
         <div className={programSectionStyles.container}>
           {this.markComplete()}
           <img src={image} alt={`${name}`} />
