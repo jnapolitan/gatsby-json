@@ -35,7 +35,7 @@ export default class ProgramSection extends Component {
           {this.markComplete()}
           <img src={image} alt={`${name}`} />
           <div>
-            <p>Part {orderString}</p>
+            <p className={programSectionStyles.partText}>Part {orderString}</p>
             <h4>{name}</h4>
           </div>
         </div>

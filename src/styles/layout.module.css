@@ -1,0 +1,136 @@
+html {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: #889DB6;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  border-style: none;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+button,
+select {
+  font: inherit;
+  margin: 0;
+  text-transform: none;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+*:before {
+  box-sizing: inherit;
+}
+
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+h1 {
+  color: #1B4B81;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+
+h2 {
+  color: #1B4B81;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 1.62671rem;
+  line-height: 1.1;
+}
+
+h3 {
+  color: #1B4B81;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 1.38316rem;
+  line-height: 1.1;
+}
+
+h4 {
+  color: #1B4B81;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 1.1rem;
+  line-height: 1.1;
+}
+
+h5 {
+  color: #1B4B81;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 0.85028rem;
+  line-height: 1.1;
+}
+
+h6 {
+  color: #1B4B81;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 0.78405rem;
+  line-height: 1.1;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+}

@@ -38,16 +38,11 @@
   outline: none;
 }
 
-h3 {
-  color: #1B4B81;
-  margin: 0;
-}
-
 .modal-button {
   border: none;
   background: none;
   text-align: left;
-  color: gray;
+  color: #889DB6;
   text-decoration: underline;
   padding: 0;
   margin: 0;

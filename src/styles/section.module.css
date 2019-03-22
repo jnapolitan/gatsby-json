@@ -2,16 +2,10 @@
   margin-bottom: 150px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.name {
   padding-bottom: 25px;
-  border-bottom: 5px solid lightgray;
-}
-
-.header a {
-  color: rgba(27, 75, 129, 0.5);
+  border-bottom: 5px solid #F1F1F1;
+  text-align: center;
 }
 
 .content {

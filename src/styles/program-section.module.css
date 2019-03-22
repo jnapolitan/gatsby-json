@@ -26,18 +26,14 @@ img {
   margin-right: auto;
 }
 
-p {
-  margin: 0;
+.part-text {
+  margin: 0 0 5px 0;
+  font-size: 16px;
   color: rgba(27, 75, 129, 0.5);
 }
 
-h4 {
-  margin: 0;
-  color: #1B4B81;
-}
-
 .check {
-  color: lightgreen;
+  color: #43BCD8;
   position: absolute;
   top: 10px;
   right: 10px;

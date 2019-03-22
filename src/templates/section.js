@@ -41,20 +41,15 @@ export default class Section extends Component {
 
   render() {
     const { section } = this.props.data;
-    const { order, programId, activities, programName } = section;
+    const { order, programId, activities } = section;
     const orderString = capitalize(toWords(order));
     
-
     return (
       <Layout>
         <div className={sectionStyles.container}>
-          <div className={sectionStyles.header}>
-            <Link to="/">⬅ Back to programs</Link>
-            <h3 className={sectionStyles.name}>
-              {`Part ${orderString}: ${section.name}`}
-            </h3>
-            <p>{titleCase(programName)}</p>
-          </div>
+          <h3 className={sectionStyles.name}>
+            {`Part ${orderString}: ${section.name}`}
+          </h3>
           <div className={sectionStyles.content}>
             <p>{section.description}</p>
             <img src={section.image} alt={section.name} />
