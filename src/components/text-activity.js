@@ -46,11 +46,14 @@ export default class TextActivity extends Component {
 
   render() {
     const { activity } = this.props;
-    
+    const html = {__html: `${activity.content}`}
 
     return (
       <div>
-        <p className={textActivityStyles.content}>{activity.content}</p>
+        <div 
+          className={textActivityStyles.content} 
+          dangerouslySetInnerHTML={html} 
+        />
         {this.renderButton()}
       </div>
     )
