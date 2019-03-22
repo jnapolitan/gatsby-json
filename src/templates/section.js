@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import { toWords } from "number-to-words";
+import { titleCase } from 'change-case';
 import capitalize from "capitalize";
 import Layout from "../components/layout";
 import SectionActivities from "../components/section-activities";
@@ -40,16 +41,20 @@ export default class Section extends Component {
 
   render() {
     const { section } = this.props.data;
-    const { order, programId, activities } = section;
+    const { order, programId, activities, programName } = section;
     const orderString = capitalize(toWords(order));
     
 
     return (
       <Layout>
         <div className={sectionStyles.container}>
-          <h3 className={sectionStyles.name}>
-            {`Part ${orderString}: ${section.name}`}
-          </h3>
+          <div className={sectionStyles.header}>
+            <Link to="/">⬅ Back to programs</Link>
+            <h3 className={sectionStyles.name}>
+              {`Part ${orderString}: ${section.name}`}
+            </h3>
+            <p>{titleCase(programName)}</p>
+          </div>
           <div className={sectionStyles.content}>
             <p>{section.description}</p>
             <img src={section.image} alt={section.name} />
